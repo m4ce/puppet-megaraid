@@ -1,7 +1,7 @@
 {
   "name": "m4ce-megaraid",
-  "version": "0.0.1",
-  "author": "Matteo Cerutti <matteo.cerutti@hotmail.co.uk>",
+  "version": "0.0.2",
+  "author": "Matteo Cerutti",
   "summary": "This module provides native types and providers to manage LSI MegaRAID devices",
   "license": "Apache-2.0",
   "source": "https://github.com/m4ce/puppet-megaraid",
