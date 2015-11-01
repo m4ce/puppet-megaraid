@@ -37,9 +37,8 @@ if $::has_megaraid {
 ### Types
 
 #### megaraid_vd
-Manage virtual disks using storcli
+`megaraid_vd` manages virtual disks using the StorCLI utility
 
-##### Example:
 ```
 megaraid_vd {"data":
   controller => 0,
@@ -48,27 +47,62 @@ megaraid_vd {"data":
 }
 ```
 
-##### Attributes
-| Name | Description | Possible values | Default Value | Required |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| vd_name | Virtual disk name | String | namevar | yes |
-| ensure | Creates or destroy virtual disk | present, absent | present | yes |
-| controller | Controller Index | Integer | | yes |
-| raid_type | RAID type | 0, 1, 5, 6, 10, 50, 60 | | yes |
-| iopolicy | Logical drive cache policy | direct, cached | | no |
-| writepolicy | Write policy | wb, wt | | no |
-| accesspolicy | Access policy | rw, ro, blocked, rmvblkd | | no |
-| readpolicy | Read policy | ra, nora | | no |
-| drives | Physical drives to use | [e:]s&#124;[e:]s-x&#124;[e:]s-x,y,[e:]s-x,y,z | yes |
-| spares | Physical drives to be used as spares | [e:]s&#124;[e:]s-x&#124;[e:]s-x,y,[e:]s-x,y,z | | no |
-| pdperarray | Number of physical drives per array | 0..15  | | no |
-| strip | Strip size | 8, 16, 32, 64, 128, 256, 512, 1024| | no |
-| pdcache | Enables or disables PD cache | on, off, default | | no |
-| sed | Creates security-enabled drives | Boolean | | no |
-| pi | Enables protection information | Boolean | | no |
-| dimmerswitch | Power-saving policy | automatic, non, max, maxnocache | | no |
-| aftervd | Creates the VD in the adjacent free slot next to the specified VD | Integer | | no |
-| force | Forces a security-capable physical drive to be added to a drive group without security | Boolean | false | no |
+##### `name` (required)
+Name to describe the VD
+
+##### `vd_name`
+Virtual disk name, defaults to name
+
+##### `ensure` (required)
+Whether the resource is present or not. Valid values are 'present', 'absent'. Defaults to 'present'.
+
+##### `controller` (required)
+Controller Index, must be an Integer
+
+##### `raid_type` (required)
+RAID type. Valid values are: 0, 1, 5, 6, 10, 50, 60.
+
+##### `iopolicy`
+Logical drive cache policy. Valid values are: 'direct', 'cached'.
+
+##### `writepolicy`
+Write policy. Valid values are: 'wb', 'wt'.
+
+##### `accesspolicy`
+Access policy. Values values are: 'rw', 'ro', 'blocked', 'rmvblkd'.
+
+##### `readpolicy`
+Read policy. Values values are: 'ra', 'nora'.
+
+##### `drives` (required)
+Physical drives to use. Valid syntax is [e:]s|[e:]s-x|[e:]s-x,y,[e:]s-x,y,z
+
+##### `spares`
+Physical drives to be used as spares. Valid syntax is [e:]s|[e:]s-x|[e:]s-x,y,[e:]s-x,y,z
+
+##### `pdperarray`
+Number of physical drives per array. Must be an Integer between 0..15.
+
+##### `strip`
+Strip size. Valid values are: 8, 16, 32, 64, 128, 256, 512, 1024.
+
+##### `pdcache`
+Enables or disables PD cache. Valid values are: on, off, default.
+
+##### `sed`
+Creates security-enabled drives. Must be a Boolean.
+
+##### `pi`
+Enables protection information. Must be a Boolean.
+
+##### `dimmerswitch`
+Power-saving policy. Valid values are: automatic, none, max, maxnocache.
+
+##### `aftervd`
+Creates the VD in the adjacent free slot next to the specified VD.
+
+##### `force`
+Forces a security-capable physical drive to be added to a drive group without security. Must be a Boolean, default is false.
 
 ## Hiera integration
 
