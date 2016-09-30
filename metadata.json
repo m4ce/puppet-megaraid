@@ -1,25 +1,24 @@
 {
-  "name": "m4ce-megaraid",
-  "version": "0.0.2",
-  "author": "Matteo Cerutti",
-  "summary": "This module provides native types and providers to manage LSI MegaRAID devices",
-  "license": "Apache-2.0",
-  "source": "https://github.com/m4ce/puppet-megaraid",
-  "project_page": "https://github.com/m4ce/puppet-megaraid",
-  "issues_url": "https://github.com/m4ce/puppet-megaraid/issues",
-  "operatingsystem_support": [
-  ],
-  "requirements": [
-    {
-      "name": "puppet",
-      "version_requirement": ">= 3.6.0 < 5.0.0"
-    }
-  ],
-  "description": "This module provides native types and providers to manage LSI MegaRAID devices",
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 2.4.0"
-    }
-  ]
+    "author": "Matteo Cerutti",
+    "dependencies": [
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">= 2.4.0"
+        }
+    ],
+    "description": "This module provides native types and providers to manage LSI MegaRAID devices",
+    "issues_url": "https://github.com/m4ce/puppet-megaraid/issues",
+    "license": "Apache-2.0",
+    "name": "m4ce-megaraid",
+    "operatingsystem_support": [],
+    "project_page": "https://github.com/m4ce/puppet-megaraid",
+    "requirements": [
+        {
+            "name": "puppet",
+            "version_requirement": ">= 3.6.0 < 5.0.0"
+        }
+    ],
+    "source": "https://github.com/m4ce/puppet-megaraid",
+    "summary": "This module provides native types and providers to manage LSI MegaRAID devices",
+    "version": "0.0.3"
 }
