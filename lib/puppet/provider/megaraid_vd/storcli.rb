@@ -82,7 +82,7 @@ Puppet::Type.type(:megaraid_vd).provide(:storcli) do
   def self.prefetch(resources)
     vds = instances
     resources.each do |name, resource|
-      if provider = vds.find { |vd| vd.name == name and vd.controller = resource[:controller] }
+      if provider = vds.find { |vd| vd.name == name and vd.controller == resource[:controller] }
         resources[name].provider = provider
       end
     end
