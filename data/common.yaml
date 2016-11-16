@@ -1,0 +1,11 @@
+---
+lookup_options:
+  megaraid::virtualdisks:
+    merge:
+      strategy: deep
+  megaraid::packages:
+    merge:
+      strategy: hash
+megaraid::packages:
+  "storcli": {}
+megaraid::virtualdisks: {}

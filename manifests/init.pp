@@ -1,9 +1,17 @@
 class megaraid (
-  $virtual_disks
+  Hash $packages,
+  Hash $virtual_disks
 ) {
-  validate_hash($virtual_disks)
 
-  realize(Package["storcli"])
+  $packages.each |String $package_name, Hash $package| {
+    package {$package_name:
+      * => $package
+    }
+  }
 
-  create_resources("megaraid_vd", $virtual_disks, {"require" => Package["storcli"]})
+  $virtualdisks.each |String $vd_name, Hash $vd| {
+    megaraid_vd {$vd_name:
+      * => $vd
+    }
+  }
 }
