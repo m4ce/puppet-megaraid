@@ -9,7 +9,7 @@ class megaraid (
     }
   }
 
-  $virtualdisks.each |String $vd_name, Hash $vd| {
+  $virtual_disks.each |String $vd_name, Hash $vd| {
     megaraid_vd {$vd_name:
       * => $vd
     }

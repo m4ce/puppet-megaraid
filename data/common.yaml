@@ -8,4 +8,4 @@ lookup_options:
       strategy: hash
 megaraid::packages:
   "storcli": {}
-megaraid::virtualdisks: {}
+megaraid::virtual_disks: {}
