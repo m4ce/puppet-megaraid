@@ -1,6 +1,6 @@
 ---
 lookup_options:
-  megaraid::virtualdisks:
+  megaraid::virtual_disks:
     merge:
       strategy: deep
   megaraid::packages:
