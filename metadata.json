@@ -1,5 +1,6 @@
 {
     "author": "Matteo Cerutti",
+    "data_provider": "hiera",
     "dependencies": [
         {
             "name": "puppetlabs/stdlib",
@@ -45,5 +46,5 @@
     ],
     "source": "https://github.com/m4ce/puppet-megaraid",
     "summary": "This module provides native types and providers to manage LSI MegaRAID devices",
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
