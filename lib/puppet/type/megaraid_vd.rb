@@ -73,7 +73,7 @@ Puppet::Type.newtype(:megaraid_vd) do
   newparam(:strip) do
     desc "Sets the strip size for the RAID configuration"
 
-    newvalues(/^[8|16|32|64|128|256|512|1024]$/)
+    newvalues(/^(8|16|32|64|128|256|512|1024)$/)
   end
 
   newproperty(:pdcache) do
