@@ -1,14 +1,13 @@
-#!/usr/bin/env ruby
 #
 # megaraid.rb
 #
 # Author: Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
 #
 
-if File::exist?('/sbin/lspci') then
-  %x[/sbin/lspci | grep -q 'MegaRAID']
-  has_megaraid = $?.success? ? true : false
-  Facter.add("has_megaraid") do
+if File.exists?('/sbin/lspci')
+  Facter.add(:has_megaraid) do
+    %x[/sbin/lspci | grep -q 'MegaRAID']
+    has_megaraid = $?.success?
     setcode do
       has_megaraid
     end
