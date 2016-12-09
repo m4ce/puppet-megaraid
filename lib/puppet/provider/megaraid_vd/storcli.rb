@@ -16,7 +16,7 @@ Puppet::Type.type(:megaraid_vd).provide(:storcli) do
     data = JSON.parse(storcli("/call", "/vall", "show", "all", "J"))
     data['Controllers'].each do |controller|
       controller_id = controller['Command Status']['Controller']
-      controller['Response Data'].each do |k, v|
+      controller.fetch('Response Data',{}).each do |k, v|
         if k =~ /^\/c\d+\/v\d+$/
           vd = v.first
           dg_index, vd_index = vd['DG/VD'].split('/')
