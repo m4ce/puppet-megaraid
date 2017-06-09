@@ -45,5 +45,5 @@
     ],
     "source": "https://github.com/m4ce/puppet-megaraid",
     "summary": "This module provides native types and providers to manage LSI MegaRAID devices",
-    "version": "1.1.0"
+    "version": "1.1.1"
 }
